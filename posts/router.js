@@ -162,40 +162,40 @@ router.put("/:id", (req, res) => {
           message: `Couldn't update data. Check the structure thats being passed.`,
         });
       });
-  } else if (req.body.title) {
-    Posts.update(req.params.id, { title: req.body.title })
-      .then((hub) => {
-        if (hub == 1) {
-          res.status(201).json({ title: req.body.title });
-        } else {
-          res.status(404).json({
-            message: `Requested endpoint does not exist`,
-          });
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json({
-          message: `Couldn't update data. Check the structure thats being passed.`,
-        });
-      });
-  } else if (req.body.contents) {
-    Posts.update(req.params.id, { contents: req.body.contents })
-      .then((hub) => {
-        if (hub == 1) {
-          res.status(201).json({ contents: req.body.contents });
-        } else {
-          res.status(404).json({
-            message: `Requested endpoint does not exist`,
-          });
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json({
-          message: `Couldn't update data. Check the structure thats being passed.`,
-        });
-      });
+  // } else if (req.body.title) {
+  //   Posts.update(req.params.id, { title: req.body.title })
+  //     .then((hub) => {
+  //       if (hub == 1) {
+  //         res.status(201).json({ title: req.body.title });
+  //       } else {
+  //         res.status(404).json({
+  //           message: `Requested endpoint does not exist`,
+  //         });
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       res.status(500).json({
+  //         message: `Couldn't update data. Check the structure thats being passed.`,
+  //       });
+  //     });
+  // } else if (req.body.contents) {
+  //   Posts.update(req.params.id, { contents: req.body.contents })
+  //     .then((hub) => {
+  //       if (hub == 1) {
+  //         res.status(201).json({ contents: req.body.contents });
+  //       } else {
+  //         res.status(404).json({
+  //           message: `Requested endpoint does not exist`,
+  //         });
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       res.status(500).json({
+  //         message: `Couldn't update data. Check the structure thats being passed.`,
+  //       });
+  //     });
   } else {
     return res.status(400).json({
       message: "Cannot submit empty fields",
