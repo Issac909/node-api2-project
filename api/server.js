@@ -6,11 +6,13 @@ const server = express();
 
 server.use(express.json());
 
+server.use('/api/posts', postsRouter);
+
 server.get('/', (req, res) => {
     res.send(`
         <h2>Blogs</h>
     `);
 });
 
-server.use('/api/posts', postsRouter);
+
 module.exports = server;
